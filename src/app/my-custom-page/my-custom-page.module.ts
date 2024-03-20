@@ -1,21 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-
 import { IonicModule } from '@ionic/angular';
+import { FormsModule } from '@angular/forms';
+import { MyCustomPageRoutingModule } from './my-custom-page-routing.module';
+import { MyCustomPage } from './my-custom-page';
 
-import { MyCustomPagePageRoutingModule } from './my-custom-page-routing.module';
-
-import { MyCustomPagePage } from './my-custom-page.page';
-import { MyCustomPageWithIdPage } from './my-custom-page-with-id/my-custom-page-with-id';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    MyCustomPagePageRoutingModule
+    MyCustomPageRoutingModule
   ],
-  declarations: [MyCustomPagePage, MyCustomPageWithIdPage]
+  declarations: [MyCustomPage]
 })
-export class MyCustomPagePageModule {}
+export class MyCustomPageModule {}
