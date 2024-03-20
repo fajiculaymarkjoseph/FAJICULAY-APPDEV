@@ -1,62 +1,75 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { IonButton } from '@ionic/angular';
-import { AuthenticationService } from 'src/authentication.service';
+import { Component } from '@angular/core';
+import { AuthenticationService } from '../authentication.service';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage implements OnInit {
+export class HomePage {
 
+  addedNum = 4;
+  origArr = [1, 2, 3];
+  out: boolean = false;
+  
+  data: String = '';
+  LoadingText: String = 'Loading...';
+  isLoading: boolean = false;
+  showArr : boolean = false;
+  
 
-  constructor(private authenticationService : AuthenticationService, private route : Router) {}
+  constructor(
+    private AuthenticationService: AuthenticationService,
+    private dataService: DataService,
+ ) 
+ {}
 
-  goWithAuthentication(){
-    this.authenticationService.authenticated = true;
+ Unauthenticate(){
+  alert('Successfully Unauthenticated')
+  this.AuthenticationService.authenticate = false;
+  this.dataService.errorCondition = true;
+  this.showArr = false;
+}
 
+authenticate(){
+  alert('Successfully Authenticated')
+  this.AuthenticationService.authenticate = true;
+  this.dataService.errorCondition = false;
+}
+
+  async showObject(){
+    this.isLoading = true;
+    await this.dataService
+      .fetchData()
+      .then((data) => {
+        this.showArr = true;
+      })
+      .catch((error) => {
+        console.error('Process failed', error);
+      })
+      .finally(() => {
+        this.isLoading = false;
+      });
   }
 
 
-  Authentication(buttonName: string){
-
-      if(buttonName === 'button1'){
-        this.route.navigate(['blank']);
-      }else if (buttonName === 'button2'){
+  async addObject() {
+    this.isLoading = true;
+    this.showArr = false;
+    await this.dataService
+      .fetchData()
+      .then((data) => {
+        this.origArr = [...this.origArr, this.addedNum];
+        this.addedNum += 1;
         
-        if(this.authenticationService.authenticated == true){
-          this.route.navigate(['page2']);
-        }
-      }
-    this.authenticationService.authenticated = false;
-  }
-
-  event(){
-      this.route.navigate(['blank']);
-  }
-
-  ngOnInit(): void {
-    
-  }
-
-  ngOnDestroy(): void {
-    
-  }
-
-  ionViewWillEnter(){
-    console.log('You Will Enter the Home Page');
-  }
-
-  ionViewDidEnter(){
-    console.log('You Did Enter the Home Page');
-  }
-
-  ionViewWillLeave(){
-    console.log('You Will Leave the Home Page');
-  }
-
-  ionViewDidLeave(){
-    console.log('You Did Leave the Home Page');
+      })
+      .catch((error) => {
+        console.error('Process failed', error);
+      })
+      .finally(() => {
+        this.isLoading = false;
+      });
   }
 }
+  

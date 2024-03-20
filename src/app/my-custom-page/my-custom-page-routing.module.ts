@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { MyCustomPagePage } from './my-custom-page.page';
-import { MyCustomPageWithId } from './my-custom-page-with-id/my-custom-page-with-id';
+import { MyCustomPageWithIdPage } from './my-custom-page-with-id/my-custom-page-with-id';
 
 const routes: Routes = [
   {
@@ -10,9 +10,9 @@ const routes: Routes = [
     component: MyCustomPagePage
   },
   {
-    path: 'my-custom-page-with-id/:id',
-    component: MyCustomPageWithId
-  },
+    path: './my-custom-page-with-id/my-custom-page-with-id.ts',
+    component: MyCustomPageWithIdPage
+  }
 ];
 
 @NgModule({
