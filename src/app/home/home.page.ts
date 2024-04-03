@@ -21,6 +21,7 @@ export class HomePage implements OnInit{
     private toastController:ToastController,
     private alertController: AlertController
     ) {
+     
 }
     ngOnInit(): void {
       
@@ -73,6 +74,7 @@ export class HomePage implements OnInit{
         });
         toast.present();
       }
+      
     }
     }
 }

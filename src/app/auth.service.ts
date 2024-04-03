@@ -6,9 +6,20 @@ import { Injectable } from '@angular/core';
 export class AuthService {
   authenticated = false;
   num = 0;
+  private isLoggedIn: boolean = false;
+
   constructor() { }
-  canActivate() {
-    return this.authenticated;
+  login() {
+    this.isLoggedIn = true;
+    localStorage.setItem('isLoggedIn', 'true');
   }
-  
+
+  logout() {
+    this.isLoggedIn = false;
+    localStorage.removeItem('isLoggedIn');
+  }
+
+  isAuthenticated(): boolean {
+    return this.isLoggedIn;
+  }
 }

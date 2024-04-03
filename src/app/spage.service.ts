@@ -9,9 +9,22 @@ import { NpagePage } from './npage/npage.page';
 })
 
 export class SpageService {
-  constructor(private http:HttpClient){}
   
-  fetchData():Observable<any>{
-    return this.http.get<any>('url');
+  private isLoggedIn: boolean = false;
+
+  constructor() { }
+
+  login() {
+    this.isLoggedIn = true;
+    localStorage.setItem('isLoggedIn', 'true');
+  }
+
+  logout() {
+    this.isLoggedIn = false;
+    localStorage.removeItem('isLoggedIn');
+  }
+
+  isAuthenticated(): boolean {
+    return this.isLoggedIn;
   }
 }

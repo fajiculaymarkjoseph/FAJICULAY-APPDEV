@@ -11,14 +11,17 @@ import { AuthService } from '../auth.service';
 export class DashboardPage implements OnInit {
   user:string =''
   constructor(private router:Router,private authenticated:AuthService) {
+    
 
-    if(this.authenticated.num == 1){
-      this.user = 'admin';
-    } else if (this.authenticated.num == 2){
-      this.user = 'MJ123';
+    if(this.authenticated.num == 0){
+      this.router.navigate(['home'])  
     }
-   }
-
+   else if(this.authenticated.num == 1){
+    this.user = 'admin';
+  } else if (this.authenticated.num == 2){
+    this.user = 'MJ123';
+  }
+ }
   ngOnInit() {
   }
 
