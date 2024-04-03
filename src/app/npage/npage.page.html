@@ -1,0 +1,127 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Welcome {{user}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button (click)="dashboard()">DASHBOARD</ion-button>
+  <div class="ion-text-center ion-padding" style="justify-content: center;">
+    <ion-list> 
+      <ion-item>
+        <ion-icon name="heart"></ion-icon>
+        Like
+      </ion-item>
+      <ion-item>
+        <ion-icon name="card"></ion-icon>
+        Card
+      </ion-item>
+      <ion-item>
+        <ion-icon name="square"></ion-icon>
+        Lists
+      </ion-item>
+      <ion-item>
+        <ion-icon name="star"></ion-icon>
+        Bookmark
+      </ion-item>
+    </ion-list>
+  </div>
+  
+
+  <ion-range min="0" max="100">Volume</ion-range>
+
+  <section>
+    <ion-fab vertical="" horizontal="end" slot="fixed">
+      <ion-fab-button>
+          <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-list side="top">
+          <ion-fab-button>
+              <ion-icon name="logo-facebook"></ion-icon>
+          </ion-fab-button>
+          <ion-fab-button>
+              <ion-icon name="logo-twitter"></ion-icon>
+          </ion-fab-button>
+          <ion-fab-button>
+              <ion-icon name="logo-instagram"></ion-icon>
+          </ion-fab-button>
+      </ion-fab-list>
+    </ion-fab>
+  </section>
+
+  <div style="align-items: center; justify-content: center; z-index: 2;">
+      <ion-button color="secondary">Secondary Button</ion-button>
+      <ion-button color="medium">Medium Button</ion-button>
+      <ion-button color="danger">Danger Button</ion-button>
+      <ion-button (click)="alert()">Alert Button</ion-button>
+      <ion-button (click)="toast()" color="tertiary">Toast Button</ion-button>
+      <ion-button (click)="closetoast()" color="danger">CloseToast</ion-button>
+      <ion-button (click)="closemodal()">Close Modal</ion-button>
+      <ion-toggle [(ngModel)]="condition"></ion-toggle>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <ion-card>
+    <ion-card-header color="primary">
+      <ion-card-title>
+        DISPLAY ATLEAST 4 ROWS
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      INFO
+    </ion-card-content>
+    </ion-card>
+  
+    <ion-card>
+      <ion-card-header color="primary">
+        <ion-card-title>
+          NO DUPLICATION OF API RESOURCE
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        THIS WILL BE YOUR ACTIVITY 5 DUPLICATED RESOURCE WILL NOT BE GRADED UNIQUE RESOURCE WILL BE BASED ON THE COMMIT TO YOUR REPOSITORY
+      </ion-card-content>
+      </ion-card>
+
+<ion-card>
+<ion-card-header color="primary">
+  <ion-card-title>
+    COLOR YOUR UI
+  </ion-card-title>
+</ion-card-header>
+<ion-card-content>
+  FIND A PEG DESIGN/INSPIRATION FOR MOBILE APP AND MAKE YOUR OWN UI
+</ion-card-content>
+</ion-card>
+<ion-card>
+<ion-card-header color="primary">
+  <ion-card-title>
+    ACTIVITY-5-LASTNAME
+  </ion-card-title>
+</ion-card-header>
+<ion-card-content>
+  WILL BE YOUR BRANCH FORMAT.NOT FOLLOWING INSTRUCTION WILL NOT BE GRADED
+</ion-card-content>
+</ion-card>
+
+  <button class="btn1 btn1--primary" (click)="logout()">logout</button>
+
+
+  
+</ion-content>
