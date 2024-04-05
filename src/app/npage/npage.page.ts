@@ -19,9 +19,19 @@ export class NpagePage implements OnInit {
     private modalController : ModalController,
     private alertController : AlertController,
     private toastController : ToastController,
-    private navCtrl: NavController) { 
-     
+    private navCtrl: NavController) {  
+
+      if(this.authenticated.num == 0){
+        this.router.navigate(['home'])  
+      }
+     else if(this.authenticated.num == 1){
+      this.user = 'admin';
+    } else if (this.authenticated.num == 2){
+      this.user = 'MJ123';
+    }
    }
+
+    
     
 
   ngOnInit() {
