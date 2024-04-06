@@ -1,13 +1,34 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>calculator</ion-title>
-  </ion-toolbar>
-</ion-header>
+<!-- Calculator Body -->
+<div class="calc-body">
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">calculator</ion-title>
-    </ion-toolbar>
-  </ion-header>
-</ion-content>
+  <!-- Calculator Display Screen -->
+  <div class="calc-screen">
+      <div id="calc-operation"></div>
+      <div id="calc-typed">{{displayValue}}</div>
+  </div>
+  
+  <!-- Calculator Buttons -->
+  <div class="calc-button-row">
+    <button class="ac" (click)="clear()">AC</button>
+    <button class="opt">&#43;&#47;&#8722;</button>
+    <button class="opt">&#37;</button>
+    <button class="opt" (click)="divide()">&#247;</button>
+    <button (click)="appendNumber(7)">7</button>
+    <button (click)="appendNumber(8)">8</button>
+    <button (click)="appendNumber(9)">9</button>
+    <button class="opt" (click)="multiply()">&#215;</button>
+    <button (click)="appendNumber(4)">4</button>
+    <button (click)="appendNumber(5)">5</button>
+    <button (click)="appendNumber(6)">6</button>
+    <button class="opt" (click)="subtract()">&#8722;</button>
+    <button (click)="appendNumber(1)">1</button>
+    <button (click)="appendNumber(2)">2</button>
+    <button (click)="appendNumber(3)">3</button>
+    <button class="opt" (click)="add()">&#43;</button>
+    <button (click)="appendNumber(0)">0</button>
+    <button>.</button>
+    <button class="opt" (click)="clear()">&#9003;</button>
+    <button class="opt" (click)="calculate()">&#61;</button>
+</div>
+</div>
+
