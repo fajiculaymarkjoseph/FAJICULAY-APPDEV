@@ -1,37 +1,29 @@
-<div class="form_wrapper">
-  <div class="form_container">
-    <div class="title_container">
-      <title></title>
-      email= admin <br>
-      pass=1234
-    </div>
-    <div class="row clearfix">
-      <div class="reset">
-        <form>
-          <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
-            <input type="email"  [(ngModel)]='email' name="email" placeholder="Email" required='' />
-            
-          </div>
-          <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
-            <input type="password" [(ngModel)]='Password' name="Password" placeholder="Password" required />
-          </div>
-          <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
-            <input type="password" [(ngModel)]='Rpassword'name="Rpassword" placeholder="Re-type Password" required='' />
-          </div>
-          <div class="row clearfix">
-            <div class="col_half">
-              <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                <input type="text" name="name" placeholder="First Name" />
-              </div>
-            </div>
-            <div class="col_half">
-              <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                <input type="text" name="name" placeholder="Last Name" required />
-              </div>
-            </div>
-          </div>
-        </form>
-        <div>
-          <button class="btn btn--primary" (click)="login()">Login</button>
-        </div>
-       
+<ion-header [translucent]="true" >
+  <ion-toolbar>
+    <ion-title>HOME</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true" color="success">
+  <div class="name">
+   <p>Hi I'm</p>
+  <strong>MARK JOSEPH O. FAJICULAY</strong>
+  <p>And Welcome to homepage</p>
+
+</div>
+</ion-content>
+
+<ion-tabs style="z-index: 1;">
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button>
+      <ion-icon name="home"></ion-icon>
+      <ion-label>Home</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button>
+      <ion-icon name="apps"></ion-icon>
+      <ion-label>apps</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

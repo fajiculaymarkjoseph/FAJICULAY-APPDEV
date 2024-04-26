@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { GuardGuard } from './guard.guard';
 
 const routes: Routes = [
   {
@@ -13,21 +12,9 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'npage',
-    loadChildren: () => import('./npage/npage.module').then( m => m.NpagePageModule)
+    path: 'signup',
+    loadChildren: () => import('./signup/signup.module').then( m => m.SignupPageModule)
   },
-  {
-    path: 'dashboard',
-    loadChildren: () => import('./dashboard/dashboard.module').then( m => m.DashboardPageModule)
-    
-  },  {
-    path: 'calculator',
-    loadChildren: () => import('./calculator/calculator.module').then( m => m.CalculatorPageModule)
-  },
-
-
-  
-
 ];
 
 @NgModule({
