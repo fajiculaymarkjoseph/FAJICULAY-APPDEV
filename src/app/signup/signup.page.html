@@ -6,8 +6,12 @@
   <title>Login & Registration Form</title>
  
 </head>
-<body>
+<body align="center">
+    walang firebase auth <br>
+    diko alam pano iimplement sa code <br>
+    naaaccess parin sa web ung portfolio page
   <div class="container">
+    
     <input type="checkbox" id="check">
     <div class="login form">
       <header>Login</header>
@@ -15,10 +19,10 @@
         <input type="text" placeholder="Enter your email">
         <input type="password" placeholder="Enter your password">
         <a href="#">Forgot password?</a>
-        <input type="button" class="button" value="Login">
+        <input type="button" class="button" value="Login" (click)="login()">
       </form>
       <div class="signup">
-        <span class="signup">Don't have an account?
+        <span class="signup" >Don't have an account?
          <label for="check">Signup</label>
         </span>
       </div>
@@ -26,13 +30,13 @@
     <div class="registration form">
       <header>Signup</header>
       <form action="#">
-        <input type="text" placeholder="Enter your email">
-        <input type="password" placeholder="Create a password">
-        <input type="password" placeholder="Confirm your password">
-        <input type="button" class="button" value="Signup">
+        <input type="text" placeholder="Enter your email" [(ngModel)]="email">
+        <input type="password" placeholder="Create a password" [(ngModel)]="password">
+        <input type="password" placeholder="Confirm your password" [(ngModel)]="reTypePassword">
+        <input type="button" class="button" value="Signup" (click)="signUp()">
       </form>
       <div class="signup">
-        <span class="signup">Already have an account?
+        <span class="signup" >Already have an account?
          <label for="check">Login</label>
         </span>
       </div>
