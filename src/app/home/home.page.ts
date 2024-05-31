@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { SpageService } from '../spage.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +8,19 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-
-  constructor() {}
-
+  LinkAthenticate = false
+    
+  email: String = 'admin'
+  Password:string = 'password'
+  Rpassword:String  = 'password'
+  Fname:String = ''
+  Lname:string = ''
+  constructor(private SpageService:SpageService,private router:Router) {}
+  login() {
+    
+    
+    
+      this.router.navigate(['npage']);
+   
+  }
 }

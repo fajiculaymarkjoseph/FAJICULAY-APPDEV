@@ -10,7 +10,13 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
+  },  {
+    path: 'npage',
+    loadChildren: () => import('./npage/npage.module').then( m => m.NpagePageModule)
   },
+
+  
+
 ];
 
 @NgModule({
